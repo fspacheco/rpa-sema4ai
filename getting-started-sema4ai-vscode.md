@@ -111,6 +111,16 @@ def open_page():
     page.locator(".btn-primary > .fi-basic-search").click()
     browser.screenshot()
 ```
+There are different options for the locators. If you inspect the page, you will find that the search form has a name, an id, a placeholder, and a label text.
+
+```
+page.getByLabel('Search terms')
+page.getByRole('searchbox', { name: 'Search terms' })
+page.getByPlaceholder('Find…')
+page.locator('input[name="lookfor"]')
+```
+
+I chose the `id` because it is reliable in both languages (Suomi/English). Check it.
 
 After running the task, the log file shows the screenshot. You can click to open it.
 
